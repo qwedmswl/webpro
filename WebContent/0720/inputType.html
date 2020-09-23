@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style >
+	#sendimg{
+		width : 50px;
+		height : 50px;
+	}
+</style>
+</head>
+<body>
+	<form action="input.jsp" method="post">
+		   <input type = "hidden" value="korea" name="id"><br>
+	이름   :  <input type = "text" name = "name"><br>
+	전화번호  :<input type = "text" name = "tel"><br>
+	성별   :  <input type="radio" value = "남자 " name="gender"> //남자
+		   <input type="radio" value = "여자" name="gender"> //여자<br>
+좋아하는 과일 : <input type = "checkbox" value = "사과" name="frutis">사과
+		   <input type = "checkbox" value = "토마토" name="frutis">토마토
+		   <input type = "checkbox" value = "자두" name="frutis">자두
+		   <input type = "checkbox" value = "망고" name="frutis">망고
+		   <input type = "checkbox" value = "샤인머스켓" name="frutis">샤인머스켓
+		   <br>
+	첨부파일 :
+		<input type="file" name="file"><br>
+		
+		<br>
+		- 전송 수행 : input type=image , input type = submit<br>
+		- 일반 버튼 : input type = button<br>
+		<input id="sendimg" type="image" src="../images/호랑이.jpg">
+		<input type="reset" value="취소">
+		<input type="submit">
+		<input type="button" value="확인" onclick="alert('해위~')">
+		<br>
+		- 전송 수행 : button type="submit"<br>
+		- 일반 버튼 : button type="button"<br>
+		<button type="button" onclick="alert('ㅎㅇ~')">확인</button>
+		<button type="submit">전송</button>
+		<button>전송</button>
+		<button type="reset">취소</button>
+		
+	</form>
+</body>
+</html>

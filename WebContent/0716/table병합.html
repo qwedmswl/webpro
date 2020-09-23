@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+   table{
+      width : 200px;
+      height: 50px;
+      border : 2px solid black;
+   }
+   #tr1{
+      background: red;
+   }
+   #tr2{
+      background: orange;
+   }
+   #tr3{
+      background: yellow;
+   }
+   #tr4{
+      background: green;
+   }
+   
+   #tab2{
+      width : 700px;
+      height : 50px;
+      text-align: center;
+      border-collapse: collapse;
+      border : 2px solid blue;
+      margin : 5px;
+   }
+
+   #tr21 .tr21{
+      text-align: left;
+   }
+   
+</style>
+
+
+<title>Insert title here</title>
+</head>
+<body>
+<table >
+   <tr id = "tr1" >
+      <td colspan = "2" id = "td11">df
+      </td>
+      <td colspan = "2" id = "td12">dfd
+      </td>
+      <td id = "td13">dfd
+      </td>
+      <td id = "td14">df
+      </td>
+   </tr>
+   
+   <tr id = "tr2" >
+      <td colspan = "4" id = "td21"> df
+      </td>
+      <td colspan = "2" id = "td22">dfd
+      </td>
+   </tr>
+   
+   <tr  id = "tr3" >
+      <td colspan = "4" id = "td31">df
+      </td>
+      <td colspan = "2" rowspan = "2" id = "td32">df
+      </td>
+   </tr>
+   
+   <tr id = "tr4" >
+      <td id = "td41">df
+      </td>
+      <td id = "td42">df
+      </td>
+      <td id = "td43">dfd
+      </td>
+      <td id = "td44">dfd
+      </td>
+   </tr>
+</table>
+
+<table border="1" id = "tab2">
+   <tr>
+      <td colspan = "5" id = "td1">
+      <strong>평생교육원 강좌 소개 - 2019년도 1학기</strong>
+      </td>
+   </tr>
+   
+   <tr>
+      <td>강좌이름</td>
+      <td>강의자</td>
+      <td >소개</td>
+      <td>강좌코드</td>
+      <td>실습비</td>
+   </tr>
+   
+   <tr>
+      <td>덧셈과 유화</td>
+      <td>김철수</td>
+      <td id = "tr21" class = "tr21">모든 미술영역의 어쩌고 저쩌고</td>
+      <td>H27</td>
+      <td>100,0000원</td>
+   </tr>
+   
+   <tr>
+      <td>바이올린</td>
+      <td>홍길동</td>
+      <td class = "tr21">전반적인 현악기 어쩌고 저쩌고</td>
+      <td>H28</td>
+      <td>200,0000원</td>
+   </tr>
+   
+   <tr>
+      <td>성악아카데미</td>
+      <td>김호성</td>
+      <td class = "tr21">강의를 통해 배우고 어쩌고 저쩌고</td>
+      <td>H30</td>
+      <td>300,0000원</td>
+   </tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+	function proc1() {
+		
+		// name을 이용해서 접근
+// 		document.getElementsByName("name")
+// 		document.forms[0].name.value
+		vname = document.ff.name.value
+		vgender = document.ff.gender.value
+		vhabby = document.ff.habby;
+		
+		res = "이름 : " + vname + "\n";
+		res += "성별 : " + vgender + "\n";
+		res += "취미 : " ;
+		
+		for(i=0; i<vhabby.length; i++){
+// 			console.log(vhabby[i].checked);
+			if(vhabby[i].checked){
+				res += vhabby[i].value + " ";
+			}
+		}
+		document.ff.area.value = res;
+	}
+</script>
+</head>
+<body>
+<div class="box">
+	<h3>2. form 연습 2 </h3>
+	- 결과를 출력하는 프로그램 작성하기<br>
+	- 취미가 없을 경우 "취미가 없군요"를 출력<br>
+	<br>
+	<form name="ff">
+	이름 : <input type="text" name="name"><br>
+	성별 : <input type="radio" value= "남" name= "gender" checked>남
+		 <input type="radio" value= "여" name= "gender">여
+	<br>
+	취미 :
+	<input type="checkbox" name="habby" value="여행">여행	 
+	<input type="checkbox" name="habby" value="독서">독서
+	<input type="checkbox" name="habby" value="영화감상">영화감상
+	<input type="checkbox" name="habby" value="바둑">바둑
+	<input type="checkbox" name="habby" value="장기">장기
+	<input type="checkbox" name="habby" value="등산">등산
+	<input type="checkbox" name="habby" value="낚시" checked="checked">낚시
+	<br><br>
+	<input type="button" value="결과출력" onclick="proc1()"><br>
+	<br>
+	<textarea name="area" rows="10" cols="60"></textarea>
+	</form>
+</div>
+</body>
+</html>

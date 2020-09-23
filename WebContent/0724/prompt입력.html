@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<style>
+	#out{
+		
+	}
+</style>
+<script>
+window.onload = function(){
+	var name = prompt("이름을 입력하세요.","한글 또는 영문");
+	//document.write("이름 : " + name);
+	
+	vout = document.getElementById('out');
+	vout.innerHTML = "이름 : " + name;
+	
+}
+	function add(){
+		
+		let x = prompt("첫번째 정수를 입력하세요");
+		let y = prompt("두번째 정수를 입력하세요");
+		
+		x = parseInt(x);
+		y = parseInt(y);
+		
+		sum = x + y;
+		vsum = documnet.getElementById('sum');
+		
+		let res = "입력1 : "+ x + "<br>";
+		res += "입력2 : " + y + "<br>";
+		res += "덧셈 결과 : " + sum;
+		
+		vsum.innerHTML = res;
+	}
+</script>
+</head>
+<body>
+<pre>
+	실행시 이름을 prompt()를 이용하여 입력하고
+	결과를 div에 출력한다. 
+</pre>
+<input type="button" value="확인" onclick="add()">
+<div id="out"></div>
+</body>
+</html>

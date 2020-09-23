@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<style>
+	img{
+		width: 100px; 
+		height: 100px;
+	}
+</style>
+<script>
+	function proc1() {
+		ultag = document.querySelector('ul');
+		list = document.querySelectorAll('li');
+		
+		res = "";
+		for (i = 0; i < list.length; i++) {
+// 			document.queryselector('#result1').innerHTML = list[i].firstChild;
+
+// 			res += list[i].firstChild + "<br>"; object txet가 나옴
+			res += list[i].firstChild.data + "<br>";
+		}
+		document.querySelector("#result1").innerHTML = res;
+	}
+
+	function proc2() {
+		ultag = document.getElementsByTagName('ul')[1] ; // 첫번째나오는 UL태그
+		list = ultag.getElementsByTagName('li');
+		
+		res = "";
+		for (i = 0; i < list.length; i++) {
+// 			res += list[i].firstChild.date + "<br>";
+			
+			// 이미지 태그 생성, src 속성 설정
+			vimg = document.createElement("img");
+			vimg.src = "../images/" + list[i].firstChild.data + ".jpg";
+			
+			// li태그에 추가 한다
+			list[i].appendChild(vimg);
+		}
+// 		document.querySelector("#result2").innerHTML = res;
+	}
+	
+	function proc3(liobj) { // liobj : 클릭한li 객체 변수
+		
+		// liobj의 data값 가져오기
+		res = liobj.firstChild.data;
+		
+		// 이미지 생성하기, src설정
+		vimg = document.createElement("img");
+		vimg.src = "../images/" + res + ".jpg";
+		
+		// liobj에 추가하기
+		liobj.appendChild(vimg);
+	}
+	
+	window.onload = function(){
+		result4 = document.querySelector('#result4');
+		
+	}
+		str = ["안녕하세요", "행복한 날", "좋은 아침", "무궁화 꽃", "에어컨이 그리워요"];
+	function add() {
+	
+		// 랜덤을 이용하여 한개의 문자를 선택 str[0], str[4], str[2];
+		rand = Math.floor(Math.random()*str.length);
+		// 선택된 문자로 텍스트 노드를 생성한다
+		txt = document.createTextNode(str[rand]);
+		
+		// 생성된 텍스트 노드를 result4에 추가한다.
+		result4.appendChild(txt);
+		
+		// <br>태그를 생성
+		br = document.createElement("br");
+		result4.appendChild(br);
+	
+		// p태그를 생성한다
+		p = document.createElement("p");
+		
+		// p태그에 텍스트 노드를 추가
+		p.appendChild(txt);
+		
+		// result4에 p태그를 추가한다.
+		result4.appendChild(p);
+	}
+	
+	function del() {
+		
+		// result4(부모, parent)의 마지막 자식을 얻는다.
+		child = result4.lastChild;
+		
+		// result4에서 삭제한다.
+		result4.removeChild(child);
+	}
+	
+	function addel() {
+		// 랜덤 발생 문자 선택
+		rand = Math.floor(Math.random()*str.length);
+		
+		// 선택문자로 텍스트노드 생성
+		txt = document.createTextNode(str[rand])
+		
+		// input 태그 생성
+		intge = document.createElement('input');
+		
+		// type value 설정
+		intge.type = "button"; // inp.setAttribute('type', 'button')
+		intge.value = "삭제"; // inp.setAttribute('value', '삭제')
+		intge.onclick = function(){
+			this.parentNode.remove();
+		}
+		
+		// p태그를 생성
+		ptag = document.createElement("p");
+		
+		// p태그에 텍스트 노드 추가
+		ptag.appendChild(txt);
+		
+		// p태그에 input태그 추가
+		ptag.appendChild(intge);
+		
+		// p 태그를 result5에 추가
+		document.querySelector('#result5').appendChild(ptag);
+	}
+</script>
+</head>
+<body>
+<div class="box box1">
+	<h3>1. dom text node의 값</h3>
+	- li 태그들을 검색 접근하기 <br>
+		list = document.querySelectorAll('li');<br>
+	- list들의 첫번째 자식 (firstChild)의 값을 얻기 <br>
+		list[i].firstChild.data <br>
+	<ul>
+		<li>List Item1</li>
+		<li>List Item2</li>
+		<li>List Item3</li>
+		<li>List Item4</li>
+		<li>List Item5</li>
+	</ul>
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br><br>
+	<div id="result1"></div>
+</div>
+
+<div class="box box2">
+	<h3>2. dom text node의 값으로 이미지 추가하기</h3>
+	- li 태그들을 검색 접근하기 <br>
+		list = document.querySelectorAll('li');<br>
+	- list들의 첫번째 자식 (firstChild)의 값을 얻기 <br>
+		list[i].firstChild.data <br>
+	<ul>
+		<li>레드콤보</li>
+		<li>딸기스무디</li>
+		<li>사천탕수육</li>
+		<li>화포삼겹살</li>
+		<li>핫초코</li>
+	</ul>
+	<br>
+	<input type="button" value="실행" onclick="proc2()">
+	<br><br>
+	<div id="result2"></div>
+</div>
+	
+<div class="box box3">
+	<h3>3. 클릭한 text node의 값으로 이미지 추가하기 </h3>
+	- li 태그들을 검색 접근하기 <br>
+		list = document.querySelectorAll('li');<br>
+	- list들의 첫번째 자식 (firstChild)의 값을 얻기 <br>
+		list[i].firstChild.data <br>
+	<ul>
+		<li onclick="proc3(this)">레드콤보</li>
+		<li onclick="proc3(this)">딸기스무디</li>
+		<li onclick="proc3(this)">사천탕수육</li>
+		<li onclick="proc3(this)">화포삼겹살</li>
+		<li onclick="proc3(this)">핫초코</li>
+	</ul>
+	<br>
+</div>
+	
+<div class="box box4">
+	<h3>4. 추가/삭제 </h3>
+	문자 배열 str = ["안녕하세요", "행복한 날", "좋은 아침", "Hello", "Happy", "안녕", "에어컨이 그리워"];<br>
+	랜덤을 이용하여 한개의 문다를 선택 str[0] str[4] str[2];<br>
+	선택된 문자로 텍스트노드를 생성<br>
+	생성된 텍스트노드를 result4에 추가<br>
+	
+	<input type="button" value="추가" onclick = "add()"><br>
+	createTextNode() appendChild()<br><br>
+	
+	<br><br> 
+	<input type="button" value="삭제" onclick="del()"><br>
+	lastChild removeChild()<br>
+	<div id="result4"></div>
+	<br>
+</div>
+	
+<div class="box box5">
+	<h3>5. 추가/삭제 </h3>
+	문자 배열 str = ["안녕하세요", "행복한 날", "좋은 아침", "Hello", "Happy", "안녕", "에어컨이 그리워"];<br>
+	랜덤을 이용하여 한개의 문다를 선택 str[0] str[4] str[2];<br>
+	선택된 문자로 텍스트노드를 생성<br>
+	생성된 텍스트노드를 result4에 추가<br>
+	
+	<input type="button" value="추가삭제" onclick = "addel()"><br>
+	createTextNode() appendChild()<br><br>
+	<div id="result5"></div>
+	
+</div>	
+</body>
+</html>

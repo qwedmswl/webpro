@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+	function proc1() {
+		tvalue = document.gu.dan.value;
+		res = tvalue + "단" + "\n\n";
+		for(g=1; g<10; g++){
+			res += tvalue + " * " + g + " = " + (tvalue*g) + "\n";
+		}
+		document.gu.area.value = res;
+	}
+</script>
+</head>
+<body>
+<div class="box">
+	<form name="gu">
+	<input type="text" name="dan">단
+	<input type="button" value="출력" name="gob" onclick="proc1()"><br>
+	<br><br>
+	<textarea name="area" rows="18" cols="25" style="resize: none"></textarea>
+	<br><br>
+	</form>
+	
+</div>
+</body>
+</html>

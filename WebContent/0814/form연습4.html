@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+	window.onload = function() {
+		form = document.sele;
+	}
+	
+	function proc1() {
+		svalue = fo.sele.value;
+		res = "";
+		
+		for(d=1; d<10; d++){
+			res += svalue + " * " + d + " = " + (svalue*d) + "<br>";
+			
+		}
+		document.querySelector("#result1").innerHTML = res;
+	}
+</script>
+</head>
+<body>
+<div class="box">
+	<form name="fo">
+	<select name="sele">
+		<option value="1" name="dan">1단</option>
+		<option value="2" name="dan">2단</option>
+		<option value="3" name="dan">3단</option>
+		<option value="4" name="dan">4단</option>
+		<option value="5" name="dan">5단</option>
+		<option value="6" name="dan">6단</option>
+		<option value="7" name="dan">7단</option>
+		<option value="8" name="dan">8단</option>
+		<option value="9" name="dan">9단</option>
+	</select>
+	<input type="button" value="출력" onclick="proc1()"><br><br>
+	<div id="result1"></div>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<style>
+  div{
+    width : 200px;
+    height: 100px;
+    background: silver;
+  }
+</style>
+<script>
+// 문자열 입력시 스크립트에서는 "", '' 구분하지 않는다.
+// 더하기 연산을 할때만 parseInt를 사용한다. 문자열 합치는 + 와 구분하기 위해서
+// 더하기 외의 연산은 parseInt하지 않아도 된다.
+  function calc() {
+   x = prompt("첫번째 정수를 입력하세요.");
+   x = parseInt(x);
+   
+   z = prompt("연산자를 입력하세요.");
+   
+   y = parseInt(prompt("두번째 정수를 입력하세요."));
+//    y = parseInt(y);
+   
+   // 타입이 String이 아니기 때문에 equals()메서드 이용이 안된다.
+//    if("+" == z){ 
+//       re = x + y;
+//    }else if("-"== z){
+//       re = x - y;
+//    }else if("*" == z){
+//       re = x * y;
+//    }else{
+//       re = x / y; // 정수/정수를 해도 결과값이 실수가 나온다.
+//    }
+   
+   switch(z){
+   case "+" :
+      re = x + y;
+      break;
+   case "-" :
+      re = x - y;
+      break;
+   case "*" :
+      re = x * y;
+      break;
+   case "/" :
+      re = x / y;
+      break;
+   }
+   
+   let res = "입력1 : " + x + "<br>";
+   res += "연산자 : " + z + "<br>";
+   res += "입력2 : " + y + "<br>";
+   res += "결과 : " + re; 
+   
+   document.getElementById('out').innerHTML = x + z + y + "=" +re;
+}
+</script>
+</head>
+<body>
+<pre>
+    두 개의 수를 prompt로 입력받는다.
+    한 개의 연산자를 prompt로 입력받는다.
+    
+    연산자를 비교해서 (if/ switch) 연산을 수행한다.
+    결과값을  div에 출력한다.
+</pre>
+  <input type="button" onclick="calc()" value="확인">
+  <br><br>
+  <div id="out"></div>
+</body>
+</html>

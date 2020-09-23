@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href ="../CSS/public.css">
+<style>
+
+<div id ="tip">
+
+	#tip{
+	  background : lightblue;
+/* 	  box-sizing : border-box; */
+	  word-wrap : break-word; /*글자가 공백없이 길어졌을경우 밖으로 빠져나가는 것을 방지 하고 글자를 잘라서
+	  내부로 들어오게 할 경우*/
+	  width : calc(95%- 3px)
+	}
+	div#out{
+	  height : 500;
+	  border : 2px solid orange;
+	  margin : 10px;
+	  padding : 20px ;
+	}
+	h2{
+	  border : 1px solid pink;
+	  padding : 10px;
+	  text-align : center;
+	}
+	.in{
+	  height : 300px;
+	  float : left;
+	  border: 1px dotted green;
+	  margin : 10px;
+	  padding : 10px;
+	  box-sizing: content-box; border-box;
+	}
+	
+	#dimg{
+	  width : clac(30% - 1%);
+	  
+	}
+	img{
+	  width : 100%;
+	  height : 100%;
+	}
+	#cont{
+	  width : 60%;
+	}
+	span{
+	  background : yellow;
+	  color : red;
+	  display : inline-block;
+	  font-size : 20px;
+	  font-weight: bold;
+	  width : 100px;
+	  height : 30px;
+	  text-align : center;
+	}
+	strong{
+	  font-size : 1.2em;
+	}
+	.sp{
+	  background : lightblue;
+	} 
+</style>	
+</head>
+<body>
+<pre>
+작성팁<br>
+태그에 class속성과 id속성을 부여 할 수 있다.<br>
+<strong>class속성</strong> :  여러개의 요소를 같은 형식의 스타일을 주고자 할 떄, css에서 <span>.clss이름</span>으로 지정한다.
+<br>
+<strong>id 속성</strong> : d여러개의 요소 중 특정요소로 지정하고자 할 떄, 특벼한 수타일을 지정하고자 할 떄,
+						  css에서 <span>#이름</span>으로 사용
+<br>
+<span class ="sp">box-sizing </span> : 브라우저의 크기를 조절할 때 내용도 같이 조절되러야 한다 <br>
+<span class ="sp">width : calc(30% - 1%)</span> : 가로길이의 기준을 30%로 하고 줄일때 마다 1%씩 재계산되어 조절된다.
+</div>
+<div id="out">
+	<h2>사자</h2>
+	<div class="in" id="dimg">이미지</div>
+	<div class="in" id="cont">내용내용내용</div>
+</div>
+</body>
+</html>

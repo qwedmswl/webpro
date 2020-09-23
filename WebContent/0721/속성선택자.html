@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<style>
+	pre{
+		padding :10px;
+	}
+	p{
+		font-size : 1.5em;
+	}
+	p[class=pp]{
+		color : blue;
+	}
+	span[class=pp]{
+		font-size : 2.0em;
+		font-weight : bold;
+	}
+	strong{
+		font-sizs :1.4em;
+	}
+	p[id=p4]{
+		background-color : #f1d1e1;
+	}
+	p[title=무궁화]{
+		border : 3px solid green;
+	}
+	p[title]{
+		font-style : italic;
+		color : red;
+	}
+	p[id]{
+		text-align : center;
+		text-shadow: 20px 10px 0px blue;
+	}
+</style>
+</head>
+<body>
+<div>
+<pre>
+	작성팁
+	속성 관련 선택
+	
+	<strong>p[class=pp]</strong> color : blue;
+	
+	<strong>span[class=pp]</strong> font-size :2.0em; font-weight :bold;
+	
+	<strong>p[id=p4]</strong> background-color : #f1d1e1;
+	<strong>p[title=무궁화]</strong> border : 3px solid green;
+	<strong>p[title]</strong> font-style : italic; color : red;
+	<strong>p[id]</strong> text-align : center; text-shadow: 20px 10px 0px blue;
+	
+	글자의 그림자
+	text-shadow: 20px(x좌표) 10px(y좌표) 5px(선명도, 숫자가 커질수록 흐려진다.)
+</pre>
+	<p title="무궁화 " id="p1">무궁화 꽃이 피었습니다</p>
+	<p class="pp">개나리 꽃이 피었습니다</p>
+	<p title="진달래" class="pp">진달래 꽃이 피었습니다</p>
+	<p id="p4">아카시아 꽃이 피었습니다</p>
+	<p class="pp2">봉숭아 꽃이 피었습니다</p>
+	
+	<span class="pp">사과</span>
+	<span>망고</span>
+	<span>바나나</span>
+</div>
+</body>
+</html>
